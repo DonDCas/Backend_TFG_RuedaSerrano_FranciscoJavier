@@ -1,0 +1,64 @@
+package com.example.monumentos_backend.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.example.monumentos_backend.model.Noticia;
+import com.example.monumentos_backend.repository.NoticiaRepository;
+
+@Service
+public class NoticiaService {
+
+    private final NoticiaRepository noticiaRepository;
+
+    public NoticiaService(NoticiaRepository noticiaRepository) {
+        this.noticiaRepository = noticiaRepository;
+    }
+
+    public Noticia save(Noticia noticia) {
+        if (noticia.getId() == null) {
+            noticia.setCreatedAt(LocalDateTime.now());
+        }
+        noticia.setLastModified(LocalDateTime.now());
+
+        return noticiaRepository.save(noticia);
+    }
+
+    public List<Noticia> findAll(String orderBy) {
+        Sort.Direction direction = Sort.Direction.DESC;
+
+        if (orderBy != null && !orderBy.isBlank()) {
+            direction = "asc".equalsIgnoreCase(orderBy)
+                    ? Sort.Direction.ASC
+                    : Sort.Direction.DESC;
+        }
+
+        return noticiaRepository.findAll(Sort.by(direction, "createdAt"));
+    }
+
+    public Optional<Noticia> getById(String id) {
+        return noticiaRepository.findById(id);
+    }
+
+    public boolean existsById(String id) {
+        return noticiaRepository.existsById(id);
+    }
+
+    public void deleteById(String id) {
+        noticiaRepository.deleteById(id);
+    }
+
+    public Optional<Noticia> publishNoticia(String id) {
+        System.out.println("cambiando la noticia con id" + id);
+        return noticiaRepository.findById(id).map(noticia -> {
+            noticia.setEstado(2); // 2 = Publicado
+            noticia.setFecha_publicacion(LocalDateTime.now());
+            noticia.setLastModified(LocalDateTime.now());
+            return noticiaRepository.save(noticia);
+        });
+    }
+}
