@@ -239,60 +239,7 @@ Gracias a esta formula hemos podido calcular tambien la distancia completa de un
 
 ## UML
 
-classDiagram
-    direction TB
-
-    class Monument {
-        +String id
-        +String name
-        +Double lat
-        +Double lon
-        +String mapsUrl
-        +Integer nLikes
-        +Boolean activate
-        +String accessibility
-        +LocalDateTime createdAt
-        +LocalDateTime lastModified
-        +setActivate(Boolean)
-    }
-
-    class Route {
-        +String id
-        +String name
-        +Double distanceKm
-        +Integer durationMinutes
-        +Boolean activate
-        +setActivate(Boolean)
-    }
-
-    class Notice {
-        +String id
-        +String title
-        +String content
-        +LocalDateTime publishedAt
-    }
-
-    class Tag {
-        +String id
-        +String name
-    }
-
-    class Localidad {
-        +String id
-        +String name
-        +String province
-    }
-
-    class User {
-        +String username
-        +String password
-        +String role
-    }
-
-    %% Relaciones entre clases
-    Monument "*" --> "1" Localidad : pertenece a (localidad_id)
-    Monument "*" --> "1" Tag : categorizado por (tag_id)
-    Route "*" --> "*" Monument : incluye (calculado por GeoUtils)
+<img width="801" height="936" alt="UML" src="https://github.com/user-attachments/assets/947ace2c-be2d-4f0b-beff-d9992740e572" />
 
 ## Modelos
 
