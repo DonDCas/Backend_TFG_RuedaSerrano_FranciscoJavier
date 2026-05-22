@@ -239,7 +239,7 @@ Gracias a esta formula hemos podido calcular tambien la distancia completa de un
 
 ## UML
 
-<img width="801" height="936" alt="UML" src="https://github.com/user-attachments/assets/947ace2c-be2d-4f0b-beff-d9992740e572" />
+<img width="801" height="936" alt="UML Backend drawio" src="https://github.com/user-attachments/assets/0e308d78-8e2f-4987-8986-5e80b4b600a1" />
 
 ## Modelos
 
