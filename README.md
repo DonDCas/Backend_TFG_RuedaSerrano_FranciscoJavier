@@ -1,8 +1,8 @@
 # BACKEND - ESCUCHA TU HISTORIA
 
 1. Estructura BBDD
-2. UML
-2. Modelos Spring Boot
+2. Spring Boot
+2. Modelos
 3. Servicios y Controladores
 4. Resultados
 
@@ -212,6 +212,11 @@ Para montar este backend hemos elegido Spring Boot, un framework de Java que nos
 
 El backend nos mapea los datos y mediante utilidades también nos realizará los calculos geográficos necesarios.
 
+### UML
+
+<img width="801" height="936" alt="UML Backend drawio" src="https://github.com/user-attachments/assets/0e308d78-8e2f-4987-8986-5e80b4b600a1" />
+
+
 ### 🔒Seguridad y control de acceso.
 
 Para controlar el acceso hemos configurado los CORS para permitir que el frontend se comunique con el backend sin bloqueos de seguridad del navegador. Se permiten los métodos HTTP principales de (GET, POST, PATCH, PUT, DELETE, OPTIONS).
@@ -237,9 +242,6 @@ Con esta formula utilizamos un ratio de la tierra (6378,1Km) y mediante calculos
 
 Gracias a esta formula hemos podido calcular tambien la distancia completa de una ruta o incluso lo que una persona promedio podria tardar en recorrerla.
 
-## UML
-
-<img width="801" height="936" alt="UML Backend drawio" src="https://github.com/user-attachments/assets/0e308d78-8e2f-4987-8986-5e80b4b600a1" />
 
 ## Modelos
 
