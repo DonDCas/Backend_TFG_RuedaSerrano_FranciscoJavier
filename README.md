@@ -1,6 +1,7 @@
 # BACKEND - ESCUCHA TU HISTORIA
 
 1. Estructura BBDD
+2. UML
 2. Modelos Spring Boot
 3. Servicios y Controladores
 4. Resultados
@@ -12,7 +13,6 @@ La base de datos esta montada en el SGBD PostgreSQL para que tenga la mejor cone
 La base de datos tendra la siguiente estructura siguiendo este Diagrama
 
 ![image.png](https://raw.githubusercontent.com/bucketio/img19/main/2026/05/20/1779277082252-816da86c-157d-46d7-8f36-7a93a85db721.png 'image.png')
-
 
 ### 📋 Tablas
 
@@ -236,6 +236,63 @@ Para este calculo usamos la Fórmula del Haversine:
 Con esta formula utilizamos un ratio de la tierra (6378,1Km) y mediante calculos trigonometricos podemos ver la distancia que hay entre 2 puntos en linea recta.
 
 Gracias a esta formula hemos podido calcular tambien la distancia completa de una ruta o incluso lo que una persona promedio podria tardar en recorrerla.
+
+## UML
+
+classDiagram
+    direction TB
+
+    class Monument {
+        +String id
+        +String name
+        +Double lat
+        +Double lon
+        +String mapsUrl
+        +Integer nLikes
+        +Boolean activate
+        +String accessibility
+        +LocalDateTime createdAt
+        +LocalDateTime lastModified
+        +setActivate(Boolean)
+    }
+
+    class Route {
+        +String id
+        +String name
+        +Double distanceKm
+        +Integer durationMinutes
+        +Boolean activate
+        +setActivate(Boolean)
+    }
+
+    class Notice {
+        +String id
+        +String title
+        +String content
+        +LocalDateTime publishedAt
+    }
+
+    class Tag {
+        +String id
+        +String name
+    }
+
+    class Localidad {
+        +String id
+        +String name
+        +String province
+    }
+
+    class User {
+        +String username
+        +String password
+        +String role
+    }
+
+    %% Relaciones entre clases
+    Monument "*" --> "1" Localidad : pertenece a (localidad_id)
+    Monument "*" --> "1" Tag : categorizado por (tag_id)
+    Route "*" --> "*" Monument : incluye (calculado por GeoUtils)
 
 ## Modelos
 
