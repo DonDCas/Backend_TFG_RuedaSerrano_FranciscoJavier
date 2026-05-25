@@ -69,9 +69,14 @@ Escucha tu historia es una plataforma completa diseñada para que cualquier visi
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/MireyaCueto/Backend_TFG.git
+git clone https://github.com/DonDCas/Backend_TFG_RuedaSerrano_FranciscoJavier.git
 cd escucha-tu-historia
 ```
+
+## 🎯Ejecutar Prototipo
+
+Encontrarás al clonar el proyecto un archivo llamado *Lanzar.bat* que ejecutará el compilado. Pero en cado de que no funcione porás ejecutarlo desde Intellij de alguna manerá.
+
 
 ## 🔌 Backend (Spring Boot)
 
