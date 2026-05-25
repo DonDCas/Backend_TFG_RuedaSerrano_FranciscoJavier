@@ -51,15 +51,3 @@ INSERT INTO score (id_device, id_rutes, score) VALUES
 ('3', '111e8400-e29b-41d4-a716-446655440002', 4.8),
 ('4', '111e8400-e29b-41d4-a716-446655440003', 3.5);
 
-
-
-INSERT INTO noticias (id, titulo, subtitulo, contenido, estado, fecha_publicacion, imagen_url) 
-VALUES (
-    'a1b2c3d4-e5f6-4a1b-8c2d-9876543210ab', 
-    'Nuevo proyecto de restauración para la Peña de Martos', 
-    'El ayuntamiento plantea consolidar los accesos al histórico castillo.', 
-    'Durante el último pleno municipal, se ha debatido un primer borrador para destinar fondos a la adecuación del sendero principal que sube a la Peña de Martos. El objetivo es mejorar la seguridad de los senderistas y proteger el patrimonio arquitectónico de la fortaleza calatrava. El documento aún debe ser revisado por la comisión de urbanismo.', 
-    0, 
-    NULL, 
-    NULL
-);
